@@ -11,7 +11,8 @@ const port = 3000;
 
 app.use(bodyParser.json());
 // app.use(cors);
-// Usar las rutas
+
+// Rutas
 app.use("/api", alumnoRoutes);
 // app.use('/api', planRoutes);
 app.use("/api", inscripcionRoutes);

@@ -1,4 +1,3 @@
-// controllers/inscripcionController.js
 const db = require('../db');
 
 exports.getAllInscripciones = (req, res) => {

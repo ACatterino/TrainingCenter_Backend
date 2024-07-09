@@ -1,5 +1,5 @@
-// controllers/alumnoController.js
-const db = require('../db'); // Asumiendo que tienes una configuración de conexión a la base de datos en un archivo db.js
+// CRUD Alumnos
+const db = require('../db');
 
 exports.getAllAlumnos = (req, res) => {
     const sql = 'SELECT * FROM alumnos';
