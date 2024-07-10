@@ -1,21 +1,28 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const alumnoRoutes = require("./routes/alumnoRoutes");
 // const planRoutes = require('./routes/planRoutes');
 const inscripcionRoutes = require("./routes/inscripcionRoutes");
-const db = require("./db"); // Configuración de la conexión a la base de datos
+const usuarioRoutes = require("./routes/usuarioRoutes");
+const rutinaRoutes = require("./routes/rutinaRoutes");
+const mensajeRoutes = require("./routes/mensajeRoutes");
+const db = require("./db/db"); // Configuración de la conexión a la base de datos
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT||3001;
 
 app.use(bodyParser.json());
 // app.use(cors);
 
 // Rutas
-app.use("/api", alumnoRoutes);
+//app.use("/api", alumnoRoutes);
 // app.use('/api', planRoutes);
-app.use("/api", inscripcionRoutes);
+//app.use("/api", inscripcionRoutes);
+app.use("/usuarios", usuarioRoutes);
+app.use("/rutinas", rutinaRoutes);
+app.use("/mensajes", mensajeRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

@@ -1,5 +1,5 @@
 // CRUD Alumnos
-const db = require('../db');
+const db = require('../db/db');
 
 exports.getAllAlumnos = (req, res) => {
     const sql = 'SELECT * FROM alumnos';
