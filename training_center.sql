@@ -2,8 +2,7 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql-proyectois2.alwaysdata.net
--- Generation Time: Jul 10, 2024 at 05:33 AM
+-- Generation Time: Jul 11, 2024 at 02:31 AM
 -- Server version: 10.6.17-MariaDB
 -- PHP Version: 7.4.33
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `proyectois2_training_center`
+-- Database: `training_center`
 --
 
 -- --------------------------------------------------------
@@ -44,12 +43,12 @@ CREATE TABLE `mensaje` (
 --
 
 INSERT INTO `mensaje` (`id_mensaje`, `nombre`, `apellido`, `numero_celular`, `whatsapp`, `contenido`, `fecha_hora`, `entrenaba`, `email`) VALUES
-(1, '', '', NULL, 'si', '', '2024-07-10 03:45:08', 'No aun', NULL),
+(1, 'Pablo', 'Elias', '2352342', 'no', 'hola...', '2024-07-10 06:45:08', 'No aun', NULL),
 (2, 'Mario', 'Bros', '43543334', 'si', 'hola quiero consultar...', '2024-07-10 06:45:08', 'No aun', NULL),
-(4, 'a', 'a', NULL, 'si', '', '2024-07-10 03:52:47', 'No aun', NULL),
-(5, 'Mario', 'Bros', '43543334', 'si', 'hola quiero consultar...', '0000-00-00 00:00:00', 'No aun', NULL),
-(6, 'Mario', 'Bros', '43543334', 'si', 'hola quiero consultar...', '2024-07-10 03:54:50', 'No aun', NULL),
-(7, 'Mario', 'Bros', '43543334', 'si', 'hola quiero consultar...', '2024-07-10 03:58:01', 'No aun', NULL);
+(4, 'Pedro', 'Sosa', NULL, 'no', 'Hola, cuanto es el plan mensual...', '2024-07-10 03:52:47', 'Aun entreno', NULL),
+(6, 'Marina', 'Sotelo', '43543332', 'si', 'hola quiero consultar...', '2024-07-10 03:54:50', 'No aun', NULL),
+(8, 'Julio', 'Lopez', '4354333', 'no', 'hola quiero consultar...', '2024-07-10 05:49:46', 'Aun si', 'julio@gmail.com'),
+(9, 'Pepe', 'Argento', '354232346', 'si', 'hola...', '2024-07-10 06:45:08', 'No aun', NULL);
 
 -- --------------------------------------------------------
 
@@ -69,7 +68,8 @@ CREATE TABLE `plan` (
 INSERT INTO `plan` (`id_tipo_plan`, `descripcion`) VALUES
 (1, 'Basico'),
 (2, 'Semanal'),
-(3, 'Mensual');
+(3, 'Mensual'),
+(4, 'Ninguno');
 
 -- --------------------------------------------------------
 
@@ -88,8 +88,10 @@ CREATE TABLE `rutina` (
 --
 
 INSERT INTO `rutina` (`id_rutina`, `descripcion`, `id_usuario`) VALUES
-(1, 'blablabla\r\nblabla', 1),
-(2, 'blablabla\r\nblabla222', 2);
+(1, 'Para empezar .....', 1),
+(2, 'Para aumentar masa muscular ....', 2),
+(9, 'Brazos y piernas ....', 3),
+(10, 'Musculos....', 18);
 
 -- --------------------------------------------------------
 
@@ -136,8 +138,11 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `numero_documento`, `direccion`, `fecha_nacimiento`, `telefono`, `email`, `id_tipo_plan`, `id_tipo_usuario`) VALUES
 (1, 'Juan', 'Perez', '4653333', 'Las margaritas 444', '2000-07-02', NULL, NULL, 1, 2),
-(2, 'Noelia', 'Barreto', '4345454', 'Don Bosco 445', '2024-07-02', NULL, NULL, 1, 1),
-(3, 'Roman', 'Riquelme2', '4456664', 'Catamarca 999', '1998-07-02', NULL, NULL, 1, 1);
+(2, 'Noelia', 'Barreto', '4345454', 'Don Bosco 445', '2001-07-02', NULL, NULL, 1, 1),
+(3, 'Roman', 'Riquelme', '4456664', 'Catamarca 999', '1998-07-02', NULL, NULL, 1, 1),
+(6, 'Luis', 'Lopez', '32452342', 'Las margaritas 554', '2000-07-02', NULL, NULL, 4, 2),
+(17, 'Maria', 'Ramirez', '3245234s2', 'Las margaritas 554', '2000-07-02', NULL, NULL, 4, 3),
+(18, 'Lorenzo', 'Bordon', '3464575', 'Murcia 987', '1990-10-10', NULL, NULL, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -185,19 +190,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `mensaje`
 --
 ALTER TABLE `mensaje`
-  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `plan`
 --
 ALTER TABLE `plan`
-  MODIFY `id_tipo_plan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tipo_plan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `rutina`
 --
 ALTER TABLE `rutina`
-  MODIFY `id_rutina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_rutina` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tipo_usuario`
@@ -209,7 +214,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
